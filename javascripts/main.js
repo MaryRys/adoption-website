@@ -1,1 +1,7 @@
-console.log('main');
+
+
+const initializeApp = () => {
+
+};
+
+initializeApp();
