@@ -10,18 +10,21 @@ const getPetz = () => {
     return pets;
 };
 
-const petsBuilder = (petsArray) => {
+const petsBuilder = () => {
     let domString = '';
-    petsArray.forEach((pet) => {
-        domString += `<div class="card border-success mb-3" style="max-width: 18rem;">`;
-        domString += `<div class="card-header bg-transparent border-success">${pets.name}</div>`;
-        domString += `<img class="card-img-top" src="${pets.imgURL}" alt="${pets.name}">`;
-        domString += `<div class="card-body text-success">`;
-        domString += `<h5 class="card-title">${pets.type}</h5>`;
-        domString += `<p class="card-text">${pets.specialSkill}</p>`;
-        domString += `<div class="card-footer bg-transparent border-success">${pet.type}</div>`;
+    for (let i = 0; i < pets.length; i++) {
+        domString += `<div class="petsCard">`
+        domString +=    `<div class="card border-success mb-3" style="max-width: 18rem;">`;
+        domString +=        `<div class="card-header bg-transparent border-success">${pets[i].name}</div>`;
+        domString +=        `<div class="card-body text-success">`;
+        domString +=            `<img class="card-img-top" src="${pets[i].imageUrl}" alt="${pets[i].name}">`;
+        domString +=            `<h5 class="card-title">${pets[i].type}</h5>`;
+        domString +=               `<p class="card-text">${pets[i].specialSkill}</p>`;
+        domString +=        `</div>`;
+        domString +=        `<div class="card-footer bg-transparent border-success">${pets[i].type}</div>`;
+        domString +=    `</div>`
         domString += `</div>`
-    });
+    };
     printToDom(domString);
 };
 
