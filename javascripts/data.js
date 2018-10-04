@@ -1,10 +1,9 @@
-import {getPetz, setPets} from '../javascripts/pets';
+import {getPetz, setPets, petsBuilder} from './pets.js';
 
 function executeThisCodeAfterFileLoaded () {
     const data = JSON.parse(this.responseText);
     setPets(data.pets);
-    console.log(getPets());
-    // petsBuilder(getgetPetz());
+    petsBuilder(getPetz());
 }
 
 function executeThisCodeIfXhrFails () {
@@ -18,3 +17,5 @@ const getPets = () => {
     myRequest.open('GET', './db/pets.json');
     myRequest.send();
 };
+
+export {getPets};
